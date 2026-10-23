@@ -1,21 +1,10 @@
-let weight = parseInt(prompt("Enter your weight (kg)"));
-let height = parseFloat(prompt("Enter your height (m)"));
-let gender = prompt("Enter your gender as M or F")
-let bmiCategory;
+function calculateBMI() {
 
+let weight = Number(document.getElementById("weight").value);
 
-// BMI CALCULATION
+let height = Number(document.getElementById("height").value);
 
-let bmi = weight / height ** 2;
+let bmi = weight / (height * height);
 
-if (bmi < 18.5){
-    bmiCategory = "Underweight"
-} else if (bmi > 30) {
-    bmiCategory = "Obese"
-} else {
-    bmiCategory = "Healthy or Overweight"
+document.getElementById("result").innerText = "Your BMI is: " + bmi.toFixed(2)
 }
-
-// OUTPUT
-
-console.log(`Your BMI Is: ${bmi} which is ${bmiCategory}`);
